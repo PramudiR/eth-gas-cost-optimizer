@@ -1,4 +1,4 @@
-#### Etherscab API tracker ####
+#### Etherscan API tracker ####
 # python version = 3.11.2
 
 import requests
@@ -9,6 +9,7 @@ import pytz
 import pandas as pd
 
 
+# gas tracker
 def gas_tracker(p:int):
     SL_tz = pytz.timezone('Asia/Colombo')
     df = pd.DataFrame(columns=['time','low','mid','high'])
@@ -39,7 +40,7 @@ def gas_tracker(p:int):
 def clean_data(data):
     if data is None:
         data = pd.read_csv('gpfile.csv')
-        
+
     data['low'] = data['low'].astype('int')
     data['mid'] = data['mid'].astype('int')
     data['high'] = data['high'].astype('int')
