@@ -125,6 +125,6 @@ def dt_prep_pred(path):
     batch_t1 = csv_files[batch_size:batch_size*2]
     df_t = prob_mat(batch_t)
     df_t1 = prob_mat(batch_t1)
-    pred_input = np.array([df_t[df_t.columns[1:]].values.T,
-                           df_t1[df_t1.columns[1:]].values.T])
+    pred_input = np.array([[df_t[df_t.columns[1:]].values.T,
+                           df_t1[df_t1.columns[1:]].values.T]])
     return pred_input
