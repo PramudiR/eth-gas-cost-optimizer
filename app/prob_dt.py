@@ -19,6 +19,7 @@ def prob_mat(batch):
     for csv_file in batch:
         # Read the CSV file into a DataFrame
         df1 = pd.read_csv(csv_file)
+        df1 = df1.dropna()
 
         bins=[25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300]
         freq = []
@@ -55,6 +56,10 @@ def prob_mat(batch):
     # Iterate over the rows of the DataFrame
     for col in df.columns:
         if col == 'ranges': continue
+
+        # prevent deviding by 0
+        if (df[col].iloc[-1]) == 0: continue
+        
         # Define the lambda function to divide each value by the last value of the column
         divide_by_last = lambda x: x / df[col].iloc[-1]
         df[col] = df[col].apply(divide_by_last)
