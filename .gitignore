@@ -1,5 +1,6 @@
 venv_
 *.h5
+eth_nn_model.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
