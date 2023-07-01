@@ -12,6 +12,7 @@ The Gas Optimization API is a RESTful API built using the FastAPI Python library
 Retrieves the predicted probabilities of gas cost changes within the next hour.
 #### Response
 <pre>
+  ```json
   {
     "ranges": [ "<25", "<50", "<75", "<100", "<125", "<150", "<175", "<200", "<225", "<250", "<275", "<300"],
     "15s": [ 
@@ -71,6 +72,7 @@ Retrieves the predicted probabilities of gas cost changes within the next hour.
               0.9927717447280884, 0.9954568147659302, 0.9978814125061035, 0.9974821209907532, 0.9983969330787659,0.9995218515396118
       ]
   }
+  ```
 </pre>  
 
 ### 'POST /train_nn'
@@ -78,12 +80,15 @@ Train the underlying neural net of the API using the most recent 8 hours of data
 #### Input
 Input is a boolean value. It can be either 1 or 0 and "True" or "False".
 <pre>
+  ```json
   {
     "train" : 1
   }
+  ```
 </pre>
 #### Response
 <pre>
+  ```json
   {
     "status": "Neural net retraining completed.",
     "ranges": [ "<25", "<50", "<75", "<100", "<125", "<150", "<175", "<200", "<225", "<250", "<275", "<300"],
@@ -144,14 +149,38 @@ Input is a boolean value. It can be either 1 or 0 and "True" or "False".
               0.9927717447280884, 0.9954568147659302, 0.9978814125061035, 0.9974821209907532, 0.9983969330787659,0.9995218515396118
       ]
   }
+  ```
 </pre>
 ## Installation
 To run the Gas Optimization API locally, follow these steps:
 
-1. Clone the repository: git clone https://github.com/your-repo.git
+1. Clone the repository: git clone https://github.com/dileepaj/eth-gas-cost-optimizer.git
 2. Navigate to the project directory: cd gas-optimization-api
 3. Install dependencies: pip install -r requirements.txt
 4. Start the server: uvicorn main:app --reload
 5. The API will now be accessible at http://localhost:8000.
 
 Or else this can be hosted on your own cloud service as well.
+
+## Requirements
+To successfully run the Gas Optimization API, make sure you have the following:
+- Python 3.7 or higher
+- Pip (Python package manager)
+
+## Usage
+1. Send a GET request to the '/probmat' to retrieve the probability matrix for the gas cost changes that may occur within the next hour.
+2. Analyze the predictions to determine the likelihood of gas cost changes in the upcoming hour.
+3. Implement the necessary optimizations in your Ethereum development and testing processes.
+4. If the last training of the neural network happened more than 4 hours ago you are recommended to send a POST request to '/train_nn' as explained above and retrain the model using the latest data.
+
+## Important
+This API itself does not contain any data collection API or code block, you can collect the data using Etherscan and Infura API calls. A sample of successful transaction records in each block should be collected and roughly a new block is created every 15 seconds. Then give the path to the data location to this API.
+
+## Data Privacy and Security
+The Gas Optimization API is designed with privacy and security in mind. It adheres to industry best practices to ensure the confidentiality and integrity of the data. The API does not store any personal or sensitive information related to Ethereum transactions.
+
+## Contributions
+Contributions to the Gas Optimization API are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request in the GitHub repository.
+
+## License
+This project is licensed under the [GNU General Public License (GPL)](https://www.gnu.org/licenses/gpl-3.0.en.html). Feel free to modify and use the codebase according to your requirements.
