@@ -174,7 +174,7 @@ To successfully run the Gas Optimization API, make sure you have the following:
 4. If the last training of the neural network happened more than 4 hours ago you are recommended to send a POST request to '/train_nn' as explained above and retrain the model using the latest data.
 
 ## Important
-This API itself does not contain any data collection API or code block, you can collect the data using Etherscan and Infura API calls. A sample of successful transaction records in each block should be collected and roughly a new block is created every 15 seconds. Then give the path to the data location to this API.
+This API itself does not contain any data collection API or code block, you can collect the data using [Etherscan](https://etherscan.io/login?cmd=last) and [Infura](https://app.infura.io/login) API calls. A sample of successful transaction records in each block should be collected and roughly a new block is created every 15 seconds. Then give the path to the data location to this API.
 
 ## Data Privacy and Security
 The Gas Optimization API is designed with privacy and security in mind. It adheres to industry best practices to ensure the confidentiality and integrity of the data. The API does not store any personal or sensitive information related to Ethereum transactions.
