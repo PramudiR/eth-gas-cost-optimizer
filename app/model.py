@@ -17,6 +17,7 @@ load_dotenv()
 def train_nn():
     # path to where ethereum trasaction data recorded
     path = os.getenv('PATH_D')
+    
     # get training data
     input_d, output_d = dt_prep_train(path)
     input_d = input_d.reshape((21, 2, 12*240))
@@ -79,7 +80,7 @@ def train_nn():
         # Save the updated model weights to an HDF5 file
         model.save_weights('app/eth_nn_model_weights.h5')
     
-    msg = "Neural net retrining completed."
+    msg = "Neural net retraining completed."
     return msg
 
 # predict the probability matrix for next hour
