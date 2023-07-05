@@ -155,7 +155,7 @@ Input is a boolean value. It can be either 1 or 0 and "True" or "False".
 ## Installation
 To run the Gas Optimization API locally, follow these steps:
 
-1. Clone the repository: git clone https://github.com/PramudiR/eth-gas-cost-optimizer.git
+1. Clone the repository: git clone https://github.com/dileepaj/eth-gas-cost-optimizer.git
 2. Navigate to the project directory: cd gas-optimization-api
 3. Install dependencies: pip install -r requirements.txt
 4. Start the server: uvicorn main:app --reload
