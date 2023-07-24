@@ -1,5 +1,5 @@
-# Ethereum Gas Optimization API
-The Gas Optimization API is a RESTful API built using the FastAPI Python library and runs on the Uvicorn server. It is designed explicitly for Ethereum development teams to optimize gas costs in both development testing and production environments.  
+# Ethereum Gas Optimizer
+The Ethereum Gas Optimizer is a RESTful API built using the FastAPI Python library and runs on the Uvicorn server. It is designed explicitly for Ethereum development teams to optimize gas costs in both development testing and production environments.  
 The API utilizes a neural network model trained on the last 8 hours of successful Ethereum transaction data, allowing it to predict the probabilities of gas cost changes within the next hour based on the latest 2 hours of data.
 
 ## Features
